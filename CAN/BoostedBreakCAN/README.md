@@ -2,9 +2,9 @@
 __BoostedBreakCAN__ is a Visual Studio C++ project that interfaces with a [PCAN-USB adapter from PEAK-System](https://www.peak-system.com/PCAN-USB.199.0.html?&L=1).
 
 ## Installation
-To use this program, you must first acquire the [PCAN-Basic API from PEAK-System](https://www.peak-system.com/PCAN-Basic.239.0.html?&L=1). 
-* Place `PCANBasic.lib` in the following path - `\BoostedBreakCAN\lib\x64\PCANBasic.lib`
-* Place `PCANBasic.h` in the following path - `\BoostedBreakCAN\PCANBasic.h`.
+To use this program as intended, you must first download the [PCAN-Basic API from PEAK-System](https://www.peak-system.com/PCAN-Basic.239.0.html?&L=1), and agree to the terms & conditions necessary to use their product. 
+* Place `PCANBasic.lib` in the following path - `\BoostedBreakCAN\lib\x64\PCANBasic.lib` - and include it the root of the Visual Studio project.
+* Place `PCANBasic.h` in the following path - `\BoostedBreakCAN\PCANBasic.h` - and include it in the header folder of the Visual Studio project.
 
 ## Features
 ### Completed Features
@@ -24,3 +24,6 @@ __BoostedBreakCAN__ was developed via testing with an ESC on v2.7.2, XRB on v2.5
 ## Releases
 ### Latest Release - v0.0.1
 v0.0.1 is the initial published release of __BoostedBreakCAN__. 
+
+## Licensing
+This project is under exclusive copyright by default, until further notice.
