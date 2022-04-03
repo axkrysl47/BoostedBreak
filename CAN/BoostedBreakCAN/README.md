@@ -3,8 +3,8 @@ __BoostedBreakCAN__ is a Visual Studio C++ project that interfaces with a [PCAN-
 
 ## Installation
 To use this program, you must first acquire the [PCAN-Basic API from PEAK-System](https://www.peak-system.com/PCAN-Basic.239.0.html?&L=1). 
-* Place `PCANBasic.lib` in the following folder - `\BoostedBreakCAN\lib\x64\PCANBasic.lib`
-* Place `PCANBasic.h` in the following folder - `\BoostedBreakCAN\`.
+* Place `PCANBasic.lib` in the following path - `\BoostedBreakCAN\lib\x64\PCANBasic.lib`
+* Place `PCANBasic.h` in the following path - `\BoostedBreakCAN\PCANBasic.h`.
 
 ## Features
 ### Completed Features
