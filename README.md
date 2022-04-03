@@ -1,6 +1,6 @@
 # __BoostedBreak__ - The Boosted Board Reverse Engineering Project 
 ## Overview
-__BoostedBreak__ aims to be a comprehensive reverse-engineering project for Boosted Board products, created by __axkrysl47__.
+__BoostedBreak aims to be a comprehensive reverse-engineering project for Boosted Board products, created by __axkrysl47____.
 
 Currently, __BoostedBreakCAN__ is the first and only project under __BoostedBreak__ - more projects to come later.
 
