@@ -1,5 +1,5 @@
 # __BoostedBreakCAN__ Visual Studio Project
-__BoostedBreakCAN__ is a Visual Studio C++ project that interfaces with a [PCAN-USB adapter from PEAK-System](https://www.peak-system.com/PCAN-USB.199.0.html?&L=1).
+__BoostedBreakCAN__ is a Visual Studio C++ console application that interfaces with a [PCAN-USB adapter from PEAK-System](https://www.peak-system.com/PCAN-USB.199.0.html?&L=1). I have uploaded an executable of the program that one may use without needing to clone the source or build in Visual Studio.
 
 ## Installation
 To use this program as intended, you must first download the [PCAN-Basic API from PEAK-System](https://www.peak-system.com/PCAN-Basic.239.0.html?&L=1), and agree to the terms & conditions necessary to use their product. 
