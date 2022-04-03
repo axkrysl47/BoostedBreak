@@ -14,7 +14,9 @@ To use this program as intended, you must first download the [PCAN-Basic API fro
 * Emulating a Boosted SRB with older firmware (derived from [__rscullin's BeamBREak__ project](https://beambreak.org/) python script).
 
 ### Trace Files & Analysis
-__BoostedBreakCAN__ utilizes the built-in PCAN-Basic trace file (`.trc`) creation of the PCAN-USB adapter. To properly use this functionality, you must declare a valid path in `main.cpp` for the PCAN-USB adapter to write the trace file to.
+__BoostedBreakCAN__ utilizes the built-in PCAN-Basic trace file (`.trc`) creation of the PCAN-USB adapter. To properly use this functionality, you must declare a valid path in `main.cpp` for the PCAN-USB adapter to write the trace file to. 
+
+By default, the path is `C:\BoostedBreak\BoostedBreakCAN\TraceFiles\`.
 
 After each session, __BoostedBreakCAN__ will write a trace file that contains a log of all CAN messages sent and received from the PCAN-USB adapter.
 You can then copy & paste the contents of the trace file - starting at the first entry - into the `defaultboostedbreakCAN.xlsx` speadsheet file in the `\BoostedBreakCAN\Anaylsis\` folder, which can decode the messages in the trace.
