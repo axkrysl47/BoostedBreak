@@ -38,4 +38,4 @@ v0.0.1 is the initial published release of __BoostedBreakCAN__.
 ## Licensing
 This project is under exclusive copyright by default, until further notice.
 
-If you wish to clone or fork this project, please reach out to me either on [__XR General Hospital's__ Discord community (__@axkrysl#8179__)](https://www.xrgeneralhospital.com/) or on the [Boosted Board reddit page (__@axkrysl47__)](https://www.reddit.com/r/boostedboards/). I will be sure to credit you with any work you share.
+If you wish to clone or fork this project, please reach out to me either on [__XR General Hospital's__ Discord community (__@axkrysl#8179__)](https://www.xrgeneralhospital.com/) or on the [Boosted Board reddit page (__@axkrysl47__)](https://www.reddit.com/r/boostedboards/). I will be sure to credit you with any and all contributions you make!
