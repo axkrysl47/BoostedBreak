@@ -4,7 +4,7 @@ __BoostedBreak aims to be a comprehensive reverse-engineering project for Booste
 
 Currently, __BoostedBreakCAN__ is the first and only project under __BoostedBreak__ - more projects to come later.
 
-__BoostedBreak__ was made as an attempt to be a spiritual sucessor to [__rscullin's BeamBREak__ project](https://beambreak.org/).
+__BoostedBreak__ was made as an attempt to be a spiritual successor to [__rscullin's BeamBREak__ project](https://beambreak.org/).
 
 ## __BoostedBreakCAN__
 
