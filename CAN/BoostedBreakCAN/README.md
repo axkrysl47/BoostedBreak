@@ -7,16 +7,18 @@ To use this program, you must first acquire the [PCAN-Basic API from PEAK-System
 * Place `PCANBasic.h` in the following folder - `\BoostedBreakCAN\`.
 
 ## Features
+### Completed Features
 * Latest Boosted CAN Protocol Message breakdown - reference `BoostedCANMsgInfo.h`.
 * Acquiring real-time data from sniffing the CANBus communications between a real Boosted V2/3 battery & electronic speed controller.
 * Emulating a Boosted ESC over CANBus.
 * Emulating a Boosted SRB with older firmware (derived from [__rscullin's BeamBREak__ project](https://beambreak.org/) python script).
 
-Features to be added:
+### Incomplete Features
 * Emulating a Boosted SRB with later firmware.
 * Emulating a Boosted XRB with latest firmware.
 * Implementing an easy-to-read 'brief mode'.
 
+## Development
 __BoostedBreakCAN__ was developed via testing with an ESC on v2.7.2, XRB on v2.5.1, & SRB on v1.5.6. (A special credit goes to __David Wang__, founder of [__XR General Hospital__](https://www.xrgeneralhospital.com/), who helped source me the parts I needed to get this project off the ground.)
 
 ## Releases
