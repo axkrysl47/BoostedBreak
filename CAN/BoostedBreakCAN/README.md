@@ -3,8 +3,8 @@ __BoostedBreakCAN__ is a Visual Studio C++ project that interfaces with a [PCAN-
 
 ## Installation
 To use this program as intended, you must first download the [PCAN-Basic API from PEAK-System](https://www.peak-system.com/PCAN-Basic.239.0.html?&L=1), and agree to the terms & conditions necessary to use their product. 
-* Place `PCANBasic.lib` in the following path - `\BoostedBreakCAN\lib\x64\PCANBasic.lib` - and include it the root of the Visual Studio project.
-* Place `PCANBasic.h` in the following path - `\BoostedBreakCAN\PCANBasic.h` - and include it in the header folder of the Visual Studio project.
+* Place `PCANBasic.lib` in the following path - `\BoostedBreakCAN\lib\x64\PCANBasic.lib` - and add it to the root of the Visual Studio project.
+* Place `PCANBasic.h` in the following path - `\BoostedBreakCAN\PCANBasic.h` - and add it to the header folder of the Visual Studio project.
 
 ## Features
 ### Completed Features
@@ -12,6 +12,12 @@ To use this program as intended, you must first download the [PCAN-Basic API fro
 * Acquiring real-time data from sniffing the CANBus communications between a real Boosted V2/3 battery & electronic speed controller.
 * Emulating a Boosted ESC over CANBus.
 * Emulating a Boosted SRB with older firmware (derived from [__rscullin's BeamBREak__ project](https://beambreak.org/) python script).
+
+### Trace Files & Analysis
+__BoostedBreakCAN__ utilizes the built-in PCAN-Basic trace file (`.trc`) creation of the PCAN-USB adapter. To properly use this functionality, you must declare a valid path in `main.cpp` for the PCAN-USB adapter to write the trace file to.
+
+After each session, __BoostedBreakCAN__ will write a trace file that contains a log of all CAN messages sent and received from the PCAN-USB adapter.
+You can then copy & paste the contents of the trace file - starting at the first entry - into the `defaultboostedbreakCAN.xlsx` speadsheet file in the `\BoostedBreakCAN\Anaylsis\` folder, which can decode the messages in the trace.
 
 ### Incomplete Features
 * Emulating a Boosted SRB with later firmware.
