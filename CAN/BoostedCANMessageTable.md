@@ -1,4 +1,5 @@
-# Boosted CAN Message Table 
+# Boosted CAN Message Table
+The following is representation of all reverse-engineered CAN messages on the latest Boosted V2/3 battery & electronic speed controller firmwares.
 
 ## Template Message 
 * CAN ID: `0x10 [Header : 20 bits] [Counter : 4 bits]`
@@ -6,50 +7,51 @@
 * DATA: `[D0] [D1] [D2] [D3] [D4] [D5] [D6] [D7]`
 
 ## Message Table
-| Header  | Source  | Len |  Context  | Description                 | Interpretation                                                                                   |
-|:-------:|:-------:|:---:|:---------:|:--------------------------- |:------------------------------------------------------------------------------------------------ |
-|`0x02402`|   ESC   | `8` |   Event   | Version / Serial (to SRB)   | `v[D6].[D7].[D0]` / `BoostedBoard[D5][D4][D3][D2][D1]`                                           |
-|`0x02411`|   SRB   | `8` |   Event   | Debug Message (Continued)   | ASCII Message                                                                                    |
-|`0x05415`|   XRB   | `8` |   Event   | Version Registration        | `v[D2].[D3].[D4]` / `[D6:7]` = `[BTY Code]`                                                      |
-|`0x12402`|   SRB   | `1` |   Event   | Software/Hardware Release?  | IF `[D0]` == `02`, Public?                                                                       |
-|`0x12411`|   SRB   | `8` |   Event   | Debug Message (End)         | ASCII Message                                                                                    |
-|`0x13417`|   XRB   | `8` |   Event   | Debug Code (End)            | Unknown (Null-terminated coded string?)                                                          |
-|`0x15415`|   XRB   | `3` |   Event   | Software/Hardware Release?  | IF `[D2]` == `02`, Public?                                                                       |
-|`0x22402`|   SRB   | `8` |   Event   | Unknown (Incrementer?)      | `[D3:0]` = INT32? / `[D4]` = `03`                                                                |
-|`0x22411`|   SRB   | `8` |   Event   | Debug Message (Start)       | ASCII Message                                                                                    |
-|`0x23417`|   XRB   | `8` |   20 ms   | Debug Code (Start)          | Unknown (Null-terminated coded string?)                                                          |
-|`0x25415`|   XRB   | `8` |   20 ms   | Serial Registration         | `BoostedBattery[D2][D3][D4][D5]`                                                                 |
-|`0x32411`|   SRB   | `8` |   Event   | Debug Message (Address)     | ASCII Message                                                                                    |
-|`0x33417`|   XRB   |  *  |   Event   | Registration State (to ESC) | IF `[D0:1]` == `010A`, Standby ------------------------------------------ IF `[D0:6]` == `007D0064006400`, Registration Request |
-|`0x33440`|   BTY   | `8` |   Event   | Version                     | `v[D0].[D1].[D2]`                                                                                |
-|`0x33441`|   BTY   | `8` |   Event   | Serial                      | `BoostedBattery[D0][D1][D2][D3]`                                                                 |
-|`0x33442`|   BTY   | `8` |   250 ms  | Ping                        | `[D2:3]` = `[BTY Code]`                                                                          |
-|`0x33443`|   BTY   | `8` |   250 ms  | Indentifier                 | IF `[D0:7]` == `D20FCA080C000000`, SRB ID ------------------------------ IF `[D0:7]` == `8110C4090D000000`, XRB ID |
-|`0x33445`|   BTY   | `8` |   20 ms   | Voltages (mV)               | `[D1:0]` = Lowest Cell Voltage / `[D3:2]` = Highest Cell Voltage / `[D7:4]` = Total Pack Voltage |
-|`0x33446`|   BTY   | `8` |   20 ms   | Unknown (Calibration?)      | `[D3:0]` = INT32? / `[D7:4]` = INT32?                                                            |
-|`0x33447`|   BTY   | `8` |   250 ms  | Amperages (mA)              | `[D3:0]` = 10 second Average Current --------------------------------- `[D7:4]` = Instantaneous Current; _See notes below_ |
-|`0x33448`|   BTY   | `8` |   20 ms   | Unknown (Counter?)          | IF `[D0:1]` = `0000`, Standby; IF `[D0:1]` = `50C3`, Active (SRB); IF `[D0:1]` = `B888`, Active (XRB) / `D[5:4]` = INT16 |
-|`0x33449`|   BTY   | `8` |   250 ms  | State of Charge             | `[D4]` = Percentage; _See example below_ |
-|`0x3344A`|   BTY   | `8` |   100 ms  | State / Timer / Millis(LSB) | _See example below_                                                                                      |
-|`0x3344C`|   SRB   | `8` |   100 ms  | Button State                | _See example below_                                                                                      |
+| Header  | Source  | Len |  Context  | Description                 | Interpretation                                                                                                                          |
+|:-------:|:-------:|:---:|:---------:|:--------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------- |
+|`0x02402`|   ESC   | `8` |   Event   | Version / Serial (to SRB)   | `v[D6].[D7].[D0]` / `BoostedBoard[D5][D4][D3][D2][D1]`                                                                                  |
+|`0x02411`|   SRB   | `8` |   Event   | Debug Message (Continued)   | ASCII Message                                                                                                                           |
+|`0x05415`|   XRB   | `8` |   Event   | Version Registration        | `v[D2].[D3].[D4]` / `[D6:7]` = `[BTY Code]`                                                                                             |
+|`0x12402`|   SRB   | `1` |   Event   | Software/Hardware Release?  | IF `[D0]` == `02`, Public?                                                                                                              |
+|`0x12411`|   SRB   | `8` |   Event   | Debug Message (End)         | ASCII Message                                                                                                                           |
+|`0x13417`|   XRB   | `8` |   20 ms   | Debug Code (End)            | Unknown (Null-terminated coded string?)                                                                                                 |
+|`0x15415`|   XRB   | `3` |   Event   | Software/Hardware Release?  | IF `[D2]` == `02`, Public?                                                                                                              |
+|`0x22402`|   SRB   | `8` |   Event   | Unknown (Incrementer?)      | `[D3:0]` = INT32? / `[D4]` = `03`                                                                                                       |
+|`0x22411`|   SRB   | `8` |   Event   | Debug Message (Start)       | ASCII Message                                                                                                                           |
+|`0x23417`|   XRB   | `8` |   20 ms   | Debug Code (Start)          | Unknown (Null-terminated coded string?)                                                                                                 |
+|`0x25415`|   XRB   | `8` |   Event   | Serial Registration         | `BoostedBattery[D2][D3][D4][D5]`                                                                                                        |
+|`0x32411`|   SRB   | `8` |   Event   | Debug Message (Address)     | ASCII Message                                                                                                                           |
+|`0x33417`|   XRB   |  *  |   Event   | Registration State (to ESC) | IF `[D0:1]` == `010A`, Standby ------------------------------------------ IF `[D0:6]` == `007D0064006400`, Registration Request         |
+|`0x33440`|   BTY   | `8` |   Event   | Version                     | `v[D0].[D1].[D2]`                                                                                                                       |
+|`0x33441`|   BTY   | `8` |   Event   | Serial                      | `BoostedBattery[D0][D1][D2][D3]`                                                                                                        |
+|`0x33442`|   BTY   | `8` |   250 ms  | Ping                        | `[D2:3]` = `[BTY Code]`                                                                                                                 |
+|`0x33443`|   BTY   | `8` |   250 ms  | Indentifier                 | IF `[D0:7]` == `D20FCA080C000000`, SRB ID ----------------------------- IF `[D0:7]` == `8110C4090D000000`, XRB ID                      |
+|`0x33445`|   BTY   | `8` |   20 ms   | Voltages (mV)               | `[D1:0]` = Lowest Cell Voltage / `[D3:2]` = Highest Cell Voltage / `[D7:4]` = Total Pack Voltage                                        |
+|`0x33446`|   BTY   | `8` |   20 ms   | Unknown (Calibration?)      | `[D3:0]` = INT32? / `[D7:4]` = INT32?                                                                                                   |
+|`0x33447`|   BTY   | `8` |   250 ms  | Amperages (mA)              | `[D3:0]` = 10 second Average Current --------------------------------- `[D7:4]` = Instantaneous Current; _See notes below_              |
+|`0x33448`|   BTY   | `8` |   20 ms   | Unknown (Counter?)          | IF `[D0:1]` = `0000`, Standby; IF `[D0:1]` = `50C3`, Active (SRB); IF `[D0:1]` = `B888`, Active (XRB) / `D[5:4]` = INT16                |
+|`0x33449`|   BTY   | `8` |   250 ms  | State of Charge             | `[D4]` = Percentage; _See example below_                                                                                                |
+|`0x3344A`|   BTY   | `8` |   100 ms  | State / Timer / Millis(LSB) | _See example below_                                                                                                                     |
+|`0x3344C`|   SRB   | `8` |   Event   | Button State                | _See example below_                                                                                                                     |
 |`0x3344E`|   BTY   | `8` |  1000 ms  | Current Timestamp           | `[D6]` / `[D5]` / `[D3]`, `[D4]`, `[D2]` : `[D1]` : `[D0]` ------------------- = YYYY / MM / DD, DoW, HH : MM : SS; _See example below_ |
-|`0x34316`|   ESC   | `3` |   Event   | Registration State (to BTY) | IF `[D0:2]` == `010C00`, BTY Registration Command ------------------- IF `[D0:2]` == `020600`, ESC Registration Notification |
-|`0x34344`|   ESC   | `8` |   Event   | Version / Serial (to BTY)   | `v[D2].[D1].[D0]` / `BoostedBoard[D7][D6][D5][D4][D3]`                                           |
-|`0x3434B`|   ESC   | `8` |   100 ms  | Ping / Power Command        | IF `[D0]` == `00`, Ping --------------------------------------------------- IF `[D0]` == `02`, Power Off (via Remote Command) |
-|`0x3434D`|   SRB   | `8` |  1000 ms  | Pairing State               | IF `[D0:1]` == `0000`, Not Pairing --------------------------------------- IF `[D0:1]` == `01D7`, Pairing Mode |
-|`0x3B31A`|   ESC   | `3` |   Event   | Mode                        | _See example below_                                                                                      |
-|`0x3B41A`|   XRB   | `8` |   Event   | Button / Charge State       | _See example below_                                                                                      |
-|`0x33920`|   ACC   | `8` |   Event   | Accessory Registration      | _See example below_                                                                                      |
-|`0x39320`|   ESC   | `8` |   Event   | Light Command (to ACC)      | _See example below_                                                                                      |
+|`0x34316`|   ESC   | `3` |   Event   | Registration State (to BTY) | IF `[D0:2]` == `010C00`, BTY Registration Command ------------------ IF `[D0:2]` == `020600`, ESC Registration Notification            |
+|`0x34344`|   ESC   | `8` |   Event   | Version / Serial (to BTY)   | `v[D2].[D1].[D0]` / `BoostedBoard[D7][D6][D5][D4][D3]`                                                                                  |
+|`0x3434B`|   ESC   | `8` |   100 ms  | Ping / Power Command        | IF `[D0]` == `00`, Ping --------------------------------------------------- IF `[D0]` == `02`, Power Off (via Remote Command)           |
+|`0x3434D`|   SRB   | `8` |  1000 ms* | Pairing State               | IF `[D0:1]` == `0000`, Not Pairing -------------------------------------- IF `[D0:1]` == `01D7`, Pairing Mode                          |
+|`0x3B31A`|   ESC   | `3` |   Event   | Mode                        | _See example below_                                                                                                                     |
+|`0x3B41A`|   XRB   | `8` |   Event   | Button / Charge State       | _See example below_                                                                                                                     |
+|`0x33920`|   ACC   | `8` |   Event   | Accessory Registration      | _See example below_                                                                                                                     |
+|`0x39320`|   ESC   | `8` |   Event   | Light Command (to ACC)      | _See example below_                                                                                                                     |
 
 ### Table Notes
 * All numbers above are represented in hexadecimal.
 * Where `x < y`, `[Dx:y]` represents a big endian integer, `[Dy:x]` represents a little endian integer.
 * BTY denotes both the SRB and/or XRB.
 * ACC denotes a connected accessory.
-* `[BTY Code]` = `C409` for SRB, `A20F` for XRB
-* __Registration State from XRB to ESC__ has variable payload length.
-* __Amperages (mA)__ are represented as negative integers during discharging or as positive integers during charging.
+* `[BTY Code]` = `C409` for SRB or `A20F` for XRB
+* __XRB Registration State (to ESC)__ has variable payload length.
+* __BTY Amperages (mA)__ are represented as negative integers during discharging or as positive integers during charging.
+* __SRB Pairing State__ is sent every 1 second if pairing is in progress.
 
 ## Message Examples
 ### `0x33449` - BTY State of Charge
