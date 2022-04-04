@@ -1,4 +1,4 @@
-# BoostedBreak / CAN
+# Boosted Controller Area Network
 ## Overview
 The following is the latest comprehensive reverse-engineering breakdown of Boosted's CAN protocol between V2/3 batteries & electronic speed controllers.
 
@@ -17,13 +17,15 @@ The following CAN message is an example of the ESC sending a ping/power message 
 
 CAN Trace: `0x103434BA 8 0x02 0x00 0x00 0x00 0x00 0x00 0x00 0x00`
 * CAN ID: `0x103434BA`
-  * Boosted Prefix: `0x10`
-  * Message Type: `0x3434B` (ESC to BTY Ping/Power)
-  * Send Counter: `0xA` (11th message sent from ESC since last wrap-around of counter)
+  * Message Header Prefix: `0x10`
+  * Message Header: `0x3434B` (ESC to BTY Ping/Power)
+  * Node Send Counter: `0xA` (11th message sent from ESC since last wrap-around of counter)
 * LENGTH: `0x8`
 * PAYLOAD: `0x02 0x00 0x00 0x00 0x00 0x00 0x00 0x00`
   * First Byte: `0x02` (denotes a power-off command from ESC)
 
+### Boosted CAN Protocol Message Table
+A complete list of reverse-engineered Boosted CAN protocol messages can be found [here (BoostedCANMessageTable.md)](https://github.com/axkrysl47/BoostedBreak/blob/main/CAN/BoostedCANMessageTable.md). 
 
 ### Note:
 There is clear evidence that Boosted updated the Standard Range Battery (SRB)'s CAN protocol to more closely match the Extended Range Battery (XRB)'s protocol with later firmware versions. 
