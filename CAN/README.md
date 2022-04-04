@@ -9,7 +9,7 @@ The Boosted Board V2/3 CAN protocol between batteries & electronic speed control
 On later firmware versions (i.e. XRB v2.5.1 & ESC v2.7.2), CAN Protocol breakdown is as follows:
 * All messages have extended CAN IDs beginning with 8 bits `0b00010000` - hexadecimal `0x10`.
 * The following 20 bits - 5 hexadecimal digits - of the CAN ID denote the message type.  
-* The final 4 bits - 1 hexadecimal digit - of the CAN ID denote a node's wrap-around send counter.
+* The final 4 bits - 1 hexadecimal digit - of the CAN ID denote a node's overflowing send counter.
 * CAN Message payloads contain message information and can have varying lengths (from 1 to 8 bytes).
 
 ### Example
@@ -19,7 +19,7 @@ CAN Trace: `0x103434BA 8 0x02 0x00 0x00 0x00 0x00 0x00 0x00 0x00`
 * CAN ID: `0x103434BA`
   * Message Header Prefix: `0x10`
   * Message Header: `0x3434B` (ESC to BTY Ping/Power)
-  * Node Send Counter: `0xA` (11th message sent from ESC since last wrap-around of counter)
+  * Node Send Counter: `0xA` (11th message sent from ESC since last overflow of counter)
 * LENGTH: `0x8`
 * PAYLOAD: `0x02 0x00 0x00 0x00 0x00 0x00 0x00 0x00`
   * First Byte: `0x02` (denotes a power-off command from ESC)
