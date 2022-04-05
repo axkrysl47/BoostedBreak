@@ -16,7 +16,7 @@ The following is representation of all reverse-engineered CAN messages on the la
 |`0x12411`|   SRB   | `8` |   Event   | Debug Message (End)         | ASCII Message                                                                                                                                                      |
 |`0x13417`|   XRB   | `8` |   20 ms   | Debug Code (End)            | Unknown (Null-terminated coded string?)                                                                                                                            |
 |`0x15415`|   XRB   | `3` |   Event   | Software/Hardware Release?  | IF `[D2]` == `02`, Public?                                                                                                                                         |
-|`0x22402`|   SRB   | `8` |   Event   | Unknown (Incrementer?)      | `[D3:0]` = `INT32`? / `[D4]` = `03`                                                                                                                                |
+|`0x22402`|   SRB   | `8` |   Event   | Unknown (Incrementer?)      | `[D3:0]` = `int32_t`? / `[D4]` = `03`                                                                                                                                |
 |`0x22411`|   SRB   | `8` |   Event   | Debug Message (Start)       | ASCII Message                                                                                                                                                      |
 |`0x23417`|   XRB   | `8` |   20 ms   | Debug Code (Start)          | Unknown (Null-terminated coded string?)                                                                                                                            |
 |`0x25415`|   XRB   | `8` |   Event   | Serial Registration         | `BoostedBattery[D2][D3][D4][D5]`                                                                                                                                   |
@@ -27,13 +27,13 @@ The following is representation of all reverse-engineered CAN messages on the la
 |`0x33442`|   BTY   | `8` |   250 ms  | Ping                        | `[D2:3]` = `[BTY Code]`                                                                                                                                            |
 |`0x33443`|   BTY   | `8` |   250 ms  | Indentifier                 | IF `[D0:7]` == `D20FCA080C000000`, SRB ID ----------------------------- IF `[D0:7]` == `8110C4090D000000`, XRB ID                                                  |
 |`0x33445`|   BTY   | `8` |   20 ms   | Voltages (mV)               | `[D1:0]` = Lowest Cell Voltage - `[D3:2]` = Highest Cell Voltage - `[D7:4]` = Total Pack Voltage                                                                   |
-|`0x33446`|   BTY   | `8` |   20 ms   | Unknown (Calibration?)      | `[D3:0]` = `INT32`? / `[D7:4]` = `INT32`?                                                                                                                          |
+|`0x33446`|   BTY   | `8` |   20 ms   | Unknown (Calibration?)      | `[D3:0]` = `int32_t`? / `[D7:4]` = `int32_t`?                                                                                                                          |
 |`0x33447`|   BTY   | `8` |   250 ms  | Amperages (mA)              | `[D3:0]` = 10 second Average Current --------------------------------- `[D7:4]` = Instantaneous Current; [_See notes below_](#table-notes)                         |
 |`0x33448`|   BTY   | `8` |   20 ms   | Unknown (Counter?)          | [_See example below_](#message-examples)                                                                                                                           |
 |`0x33449`|   BTY   | `8` |   250 ms  | State of Charge             | `[D4]` = Percentage; [_See example below_](#message-examples)                                                                                                      |
 |`0x3344A`|   BTY   | `8` |   100 ms  | State / Timer / Millis(LSB) | [_See example below_](#message-examples)                                                                                                                           |
 |`0x3344C`|   SRB   | `8` |   Event   | Button State                | [_See example below_](#message-examples)                                                                                                                           |
-|`0x3344E`|   BTY   | `8` |  1000 ms  | Current Timestamp           | `[D6]` / `[D5]` / `[D3]`, `[D4]`, `[D2]` : `[D1]` : `[D0]` ------------------- = YYYY / MM / DD, DoW, HH : MM : SS; _See example below_                            |
+|`0x3344E`|   BTY   | `8` |  1000 ms  | Current Timestamp           | `[D6]` / `[D5]` / `[D3]`, `[D4]`, `[D2]` : `[D1]` : `[D0]` ------------------- = YYYY / MM / DD, DoW, HH : MM : SS; [_See example below_](#message-examples)       |
 |`0x34316`|   ESC   | `3` |   Event   | Registration State (to BTY) | IF `[D0:2]` == `010C00`, BTY Registration Command ------------------ IF `[D0:2]` == `020600`, ESC Registration Notification                                        |
 |`0x34344`|   ESC   | `8` |   Event   | Version / Serial (to BTY)   | `v[D2].[D1].[D0]` / `BoostedBoard[D7][D6][D5][D4][D3]`                                                                                                             |
 |`0x3434B`|   ESC   | `8` |   100 ms  | Ping / Power Command        | IF `[D0]` == `00`, Ping --------------------------------------------------- IF `[D0]` == `02`, Power Off (via Remote Command)                                      |
@@ -49,7 +49,7 @@ The following is representation of all reverse-engineered CAN messages on the la
 * BTY denotes both the SRB and/or XRB.
 * ACC denotes a connected accessory.
 * `[BTY Code]` = `C409` for SRB or `A20F` for XRB.
-* `INT32` & `INT16` denotes a 32-bit & 16-bit integer, respectively.
+* `int32_t` & `int16_t` denote 32-bit & 16-bit integers, respectively.
 * __XRB Registration State (to ESC)__ has variable payload length.
 * __BTY Amperages (mA)__ are represented as negative integers during discharging or as positive integers during charging.
 * __SRB Pairing State__ is sent every 1 second if pairing is in progress.
@@ -106,19 +106,23 @@ D0 D1 D2 D3 D4 D5 D6 D7
 ```
 
 ### `0x3344E` - BTY Current Timestamp
+Batteries seem to acquire the latest timestamp from the ESC / from the Boosted Phone Application.
+
+On occasion (likely tied to removing the battery/power source), a board will lose the current timestamp; 
+in that case, the battery will count up from an all zeroes timestamp.
+
 ```
 D0 D1 D2 D3 D4 D5 D6 D7
-33 34 10 0B 06 02 16 00
+33 34 10 0B 05 02 16 00
                   ^^ Year (+ 2000) - Ex. 0x16 = 22 = *2022*
-               ^^ Month - Ex. 0x02 = February
-            ^^ Day of Week - 0x00 = Sunday, 0x01 = Monday, 0x02 = Tuesday,
-                             0x03 = Wednesday, 0x04 = Thursday, 0x05 = Friday, 
-                             0x06 Saturday;
-         ^^ Date - Ex. 0x0B = 11th
+               ^^ Month - Ex. 0x02 = 2 = *February*
+            ^^ Day of Week - 0x00 = Sunday, 0x01 = Monday, 0x02 = Tuesday, 0x03 = Wednesday, 
+                             0x04 = Thursday, 0x05 = Friday, 0x06 Saturday;
+         ^^ Date - Ex. 0x0B = 11 = *11th*
       ^^ Hour - Ex. 0x10 = 16 = *4:00 PM*
    ^^ Minute - Ex. 0x34 = 52
 ^^ Second - Ex. 0x33 = 51
-Complete Example - 2022/02/11, Tuesday, 4:52:51 PM
+Complete Example - 2022/02/11, Friday, 04:52:51 PM
 ```
 
 ### `0x3B31A` - ESC Mode
@@ -147,6 +151,7 @@ D0 D1 D2
 D0 D1 D2
 00 08 04
       ^^ ESC Support Acknowledgement? - Reference ESC Mode above
+         *** ESC Support Acknowledgement is speculative, more testing needed ***     
    ^^ Button State - 0x05 = Charging,
                      0x06 = Shutting down,
                      0x07 = Currently pressed now,
@@ -163,8 +168,6 @@ D0 D1 D2
                      0x12 = Was held down for less than 1.5 seconds,
                      0x13 = Was held down for less than 2 seconds,
                      0x14 = Was held down for more than 2.5 seconds;
-         *** ESC State Acknowledgement is speculative, more testing needed ***     
-
 ```
 
 ### `0x33920` - ACC Accessory Registration
