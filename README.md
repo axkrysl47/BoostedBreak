@@ -29,6 +29,6 @@ As soon as I acquire another remote for testing, I plan to start __BoostedBreakB
 
 ## Finally...
 
-For anyone who is interested in contributing to this project, please reach out to me either on [__XR General Hospital's__ Discord community (__@axkrysl#8179__)](https://www.xrgeneralhospital.com/) or on the [Boosted Board reddit page (__@axkrysl47__)](https://www.reddit.com/r/boostedboards/). I will be sure to credit you with any and all contributions you make!
+For anyone who is interested in contributing to this project, please reach out to me either on [__XR General Hospital's__ Discord community (__@axkrysl47#8179__)](https://www.xrgeneralhospital.com/) or on the [Boosted Board reddit page (__@axkrysl47__)](https://www.reddit.com/r/boostedboards/). I will be sure to credit you with any and all contributions you make!
 
 Also, feel free to learn more about my previous projects and presentations, found on my [YouTube channel](https://www.youtube.com/channel/UCpVc9cm2N4pmNLKEEjk7v3w).
