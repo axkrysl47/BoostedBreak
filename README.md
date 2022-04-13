@@ -2,7 +2,7 @@
 ## Overview
 __BoostedBreak aims to be a comprehensive reverse-engineering project for Boosted Board products, created by __axkrysl47____.
 
-Currently, __BoostedBreakCAN__ is the first and only project under __BoostedBreak__ - more projects to come later.
+Currently, __BoostedBreakCAN__ is the first and only project under __BoostedBreak__ - more projects to come later. A video presentation of __BoostedBreak__ in action can be found on my [YouTube page](https://www.youtube.com/watch?v=uVC6fjEU02M).
 
 __BoostedBreak__ was made as an attempt to be a spiritual successor to [__rscullin's BeamBREak__ project](https://beambreak.org/).
 
@@ -12,8 +12,8 @@ __BoostedBreakCAN__ is the latest reverse-engineering breakdown of Boosted's CAN
 
 (A special credit goes to __David Wang__, founder of [__XR General Hospital__](https://www.xrgeneralhospital.com/), who helped source me the parts I needed to get this project off the ground.)
 
-### Latest Release - v0.0.1
-v0.0.1 is the initial published release of __BoostedBreakCAN__, a Visual Studio C++ project that interfaces with a [PCAN-USB adapter from PEAK-System](https://www.peak-system.com/PCAN-USB.199.0.html?&L=1).
+### Latest Release - v0.0.2
+v0.0.2 brings RLOD CAN Message support to __BoostedBreakCAN__, a Visual Studio C++ project that interfaces with a [PCAN-USB adapter from PEAK-System](https://www.peak-system.com/PCAN-USB.199.0.html?&L=1).
 
 ## What's Next...
 
