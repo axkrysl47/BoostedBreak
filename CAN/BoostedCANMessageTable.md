@@ -121,6 +121,7 @@ D0 D1 D2 D3 D4 D5 D6 D7
                ^^ Month - Ex. 0x02 = 2 = *February*
             ^^ Day of Week - 0x00 = Sunday, 0x01 = Monday, 0x02 = Tuesday, 0x03 = Wednesday, 
                              0x04 = Thursday, 0x05 = Friday, 0x06 Saturday;
+               *** Day of Week seems to not always be accurate - there maybe a difference between SRB & XRB. ***
          ^^ Date - Ex. 0x0B = 11 = *11th*
       ^^ Hour - Ex. 0x10 = 16 = *4:00 PM*
    ^^ Minute - Ex. 0x34 = 52
