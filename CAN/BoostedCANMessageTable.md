@@ -62,14 +62,17 @@ B8 88 00 00 D8 59 00 00
             ^^ ^^ ^^ ^^ Counter (Little Endian) - Ex. 0x000059D8 = 23000
 ^^ ^^ State - 0x0000 = Unavailable?,
             - 0x50C8 = Active (SRB)?,
-            - 0xB888 = Active (XRB)?;
+            - 0xB888 = Active (XRB)?,
+            - 0x5C44 = Error (XRB)?,
 ```
 
 ### `0x33449` - BTY State of Charge
 ```
 D0 D1 D2 D3 D4 D5 D6 D7
 E4 0D A2 0F 59 00 05 00
-                  ^^ Charge State - 0x05 = Normal, 0x03 = `Was charging when last powered`;
+                  ^^ Charge State - 0x05 = Normal, 
+                                    0x03 = `Was charging when last powered`,
+                                    0x06 = Battery Error;
             ^^ State of Charge Percentage  - Ex. 0x59 = 3556 / 4002 = 89%
       ^^ ^^ Denominator (Little Endian)    - Ex. 0x0FA2 = 4002
 ^^ ^^ Numerator (Little Endian)            - Ex. 0x0DE4 = 3556
@@ -128,13 +131,7 @@ Complete Example - 2022/02/11, Friday, 04:52:51 PM
 ### `0x3B31A` - ESC Mode
 ```
 D0 D1 D2
-00 04 04 
-      ^^ ESC Mode Support? - 0x00 = Up to Mode 1 Supported,
-                             0x01 = Up to Mode 2 Supported,
-                             0x02 = Up to Mode 3 Supported,
-                             0x03 = Up to Mode 4 Supported,
-                             0x04 = Up to Mode 5 Supported;
-         *** ESC Mode Support is speculative, more testing needed ***     
+00 04 04    
    ^^ Current ESC Mode - 0x00 = Mode 1 (Beginner),
                          0x01 = Mode 2 (Eco),
                          0x02 = Mode 3 (Expert),
@@ -150,8 +147,6 @@ D0 D1 D2
 ```
 D0 D1 D2
 00 08 04
-      ^^ ESC Support Acknowledgement? - Reference ESC Mode above
-         *** ESC Support Acknowledgement is speculative, more testing needed ***     
    ^^ Button State - 0x05 = Charging,
                      0x06 = Shutting down,
                      0x07 = Currently pressed now,
