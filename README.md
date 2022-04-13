@@ -2,7 +2,7 @@
 ## Overview
 __BoostedBreak aims to be a comprehensive reverse-engineering project for Boosted Board products, created by __axkrysl47____.
 
-Currently, __BoostedBreakCAN__ is the first and only project under __BoostedBreak__ - more projects to come later. A video presentation of __BoostedBreak__ in action can be found on my [YouTube page](https://www.youtube.com/watch?v=uVC6fjEU02M).
+Currently, __BoostedBreakCAN__ is the first and only project under __BoostedBreak__ - more projects to come later. A video presentation of __BoostedBreakCAN__ in action can be found on my [YouTube page](https://www.youtube.com/watch?v=uVC6fjEU02M).
 
 __BoostedBreak__ was made as an attempt to be a spiritual successor to [__rscullin's BeamBREak__ project](https://beambreak.org/).
 
