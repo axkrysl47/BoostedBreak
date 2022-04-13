@@ -3,6 +3,8 @@ __BoostedBreakCAN__ is a Visual Studio C++ console application that interfaces w
 
 I have uploaded an executable of the program that one may use without needing to clone the source or build in Visual Studio. If trace file configuration is failing, see __Trace Files & Analysis__ below.
 
+Additionally, I have uploaded a video presentation to YouTube showing __BoostedBreakCAN__ in action, linked [here](https://www.youtube.com/watch?v=uVC6fjEU02M).
+
 ## Installation
 To build this program as intended, you must first download the [PCAN-Basic API from PEAK-System](https://www.peak-system.com/PCAN-Basic.239.0.html?&L=1), and agree to the terms & conditions necessary to use their product. 
 * Place `PCANBasic.lib` in the following path - `\BoostedBreakCAN\lib\x64\PCANBasic.lib` - and add it to the root of the Visual Studio project.
