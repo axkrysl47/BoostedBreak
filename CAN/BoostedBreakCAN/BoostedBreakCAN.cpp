@@ -11,6 +11,7 @@
 #include "ConsoleInterface.h"
 
 #define DISPLAY_TRANSMIT_WITH_RECEIVE
+#undef  PRINT_TRANSMIT_MODE
 
 #define TABLE_OFFSET_Y              4
 
@@ -96,39 +97,53 @@ bool BoostedBreakCAN::SetTransmitMode(uint8_t newTransmitMode)
 
         if (newTransmitMode == TRANSMITMODE_NONE)
         {
+#ifdef PRINT_TRANSMIT_MODE
             ConsolePrint("Off                         ", CURSOR_TRANSMITMODE);
+#endif //PRINT_TRANSMIT_MODE
             m_TransmitMode = TRANSMITMODE_NONE;
         }
         else if (newTransmitMode == TRANSMITMODE_PINGONLY)
         {
+#ifdef PRINT_TRANSMIT_MODE
             ConsolePrint("Pinging...                  ", CURSOR_TRANSMITMODE);
+#endif //PRINT_TRANSMIT_MODE
             m_TransmitMode = TRANSMITMODE_PINGONLY;
         }
         else if (newTransmitMode == TRANSMITMODE_PINGPOWEROFF)
         {
+#ifdef PRINT_TRANSMIT_MODE
             ConsolePrint("Pinging Power Off...        ", CURSOR_TRANSMITMODE);
+#endif //PRINT_TRANSMIT_MODE
             m_TransmitMode = TRANSMITMODE_PINGPOWEROFF;
         }
         else if (newTransmitMode == TRANSMITMODE_EMULATEESC)
         {
+#ifdef PRINT_TRANSMIT_MODE
             ConsolePrint("Emulating ESC...            ", CURSOR_TRANSMITMODE);
+#endif //PRINT_TRANSMIT_MODE
             m_TransmitMode = TRANSMITMODE_EMULATEESC;
         }
         else if (newTransmitMode == TRANSMITMODE_EMULATESRB)
         {
             // TODO
+#ifdef PRINT_TRANSMIT_MODE
             ConsolePrint("SRB not yet implemented.    ", CURSOR_TRANSMITMODE);
+#endif //PRINT_TRANSMIT_MODE
             m_TransmitMode = TRANSMITMODE_EMULATEESC;
         }
         else if (newTransmitMode == TRANSMITMODE_EMULATEXRB)
         {
             // TODO
+#ifdef PRINT_TRANSMIT_MODE
             ConsolePrint("XRB not yet implemented.    ", CURSOR_TRANSMITMODE);
+#endif //PRINT_TRANSMIT_MODE
             m_TransmitMode = TRANSMITMODE_EMULATEESC;
         }
         else if (newTransmitMode == TRANSMITMODE_BEAMBREAKSRB)
         {
+#ifdef PRINT_TRANSMIT_MODE
             ConsolePrint("Emulating SRB (BeamBreak)...", CURSOR_TRANSMITMODE);
+#endif //PRINT_TRANSMIT_MODE
             m_TransmitMode = TRANSMITMODE_BEAMBREAKSRB;
         }
     }

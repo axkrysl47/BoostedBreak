@@ -14,7 +14,7 @@
 
 #define BOOSTEDBREAKCAN_TITLE "BoostedBreak - BoostedBreakCAN "
 #define BOOSTEDBREAKCAN_AUTHOR "- Created by Alexander Krysl (axkrysl47) "
-#define BOOSTEDBREAKCAN_VERSION "v0.0.1"
+#define BOOSTEDBREAKCAN_VERSION "v0.0.2"
 
 #define CURSOR_TRANSMITMODE_ACTIVE 86, 1
 
@@ -47,7 +47,7 @@ int main()
 
     // Initialize CAN Driver Trace Configuration
     driver->ConfigureTrace(false, true, true, false, 2, 
-        "C:\\BoostedBreak\\BoostedBreakCAN\\TraceFiles", 
+        "C:\\BoostedBreak\\BoostedBreakCAN\\TraceFiles",
         250);
     if (driver->GetIsTraceConfigured() == false)
     {
@@ -172,7 +172,7 @@ void printTableHeader(BoostedBreakCAN* program)
     ConsolePrint(BOOSTEDBREAKCAN_TITLE);
     ConsolePrint(BOOSTEDBREAKCAN_VERSION);
     ConsolePrint("                                                                    Press [Escape] to Exit. \n");
-    ConsolePrint("View Modes:     Stream[A] |  Table[S]   |     Brief[D]     |||  Active Transmit Mode:  \n");
+    ConsolePrint("View Modes:     Stream[A] |  Table[S]   |     Brief[D]     |-|  Active Transmit Mode: \n");
     ConsolePrint("Transmit Modes:  None[Q]  | ESC Ping[W] | ESC Power Off[E] | Emulate ESC[R] | Emulate SRB[T] | Emulate XRB[Y] | BeamBreak SRB[U]\n");
 
     printTableHeaderTransmitMode(program);

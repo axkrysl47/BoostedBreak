@@ -677,6 +677,10 @@ public:
             {
                 Interpretation.append("Active (SRB)");
             }
+            else if (section == "5C44")
+            {
+                Interpretation.append("Error (XRB)");
+            }
             else
             {
                 Interpretation.append("Unknown!");
@@ -737,6 +741,10 @@ public:
             else if (section == "000300")
             {
                 Interpretation.append("Charged Previously");
+            }
+            else if (section == "000600")
+            {
+                Interpretation.append("Battery Error");
             }
             else
             {
