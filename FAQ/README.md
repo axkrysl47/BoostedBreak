@@ -47,18 +47,24 @@ Boosted (formerly Boosted Boards) was an American manufacturer of electric skate
 ### 4. What is a Boosted Board?
 A Boosted Board is an electrically motorized longboard or skateboard that was designed and manufactured by the now defunct company Boosted, Inc. Boosted created several different models of electric longboards, a list which can be found below.
 
-* _First generation (V1)_
-  * __Boosted Single, Boosted Dual (V1), Boosted Dual+ (V1)__
-* _Second generation (V2)_
-  * __Boosted Dual (V2), Boosted Dual+ (V2)__
-* _Third generation (V3)_
-  * __Boosted Mini S, Boosted Mini X, Boosted Plus, Boosted Stealth__
+* _First generation_ (V1)
+  * __Boosted Single__
+  * __Boosted Dual (V1)__
+  * __Boosted Dual+ (V1)__
+* _Second generation_ (V2)
+  * __Boosted Dual (V2)__
+  * __Boosted Dual+ (V2)__
+* _Third generation_ (V3)
+  * __Boosted Mini S__
+  * __Boosted Mini X__
+  * __Boosted Plus__
+  * __Boosted Stealth__
 
 ### 5. What is the Boosted Rev / Scooter?
-A Boosted Rev is an electrically motorized scooter that was designed and manufactured by the now defunct company Boosted, Inc. Boosted created only one electric scooter model called the __Boosted Rev__.
+A __Boosted Rev__ is an electrically motorized scooter that was designed and manufactured by the now defunct company Boosted, Inc. Boosted created only one electric scooter model before the company ended operations.
 
 ### 6. What is an electric skateboard/longboard ESC / Motor Driver?
-In general, the terms Motor driver (MD), motor controller, electronic speed controller (ESC), are all aliases for an embedded system that controls motors. On all Boosted Boards, the ESC is secured under the deck in front of the motors. If you would like to know more about Boosted Board ESCs, check out the [BoostedBreakESC folder]().
+In general, the terms motor driver (MD), motor controller, electronic speed controller (ESC), are all aliases for an embedded system that controls motors. On all Boosted Boards, the ESC is secured under the deck in front of the motors. If you would like to know more about Boosted Board ESCs, check out the [BoostedBreakESC folder]().
 
 ### 7. What is an electric skateboard/longboard battery?
 In general, an electric skateboard/longboard battery is a relatively high capacity (typically 100 to 1000 Watt-hours), high discharge (typically 20 - 100 amperes) designed for use in electric skateboard/longboard applications. Typically, electric skateboard/longboard batteries also consist of embedded systems that control charging, monitor discharging, perform cell balancing, and more. On all Boosted Boards, the battery is secured under the deck behind the front trucks. If you would like to know more about Boosted Board batteries, check out the [BoostedBreakBTY folder]().
@@ -81,14 +87,16 @@ General charging is the process of charging the battery as a whole to a specifie
 
 By contrast, battery balancing is the process of ensuring that all 12 cells are individually charged to their specific charged voltage.
 
-Individual cell voltage monitoring is paramount for multi-series-cell battery safety. Each individual lithium ion cell needs to be kept in a specific voltage range: too low and the cell begins to degrade very quickly, too high, and the cell can catch fire and explode. This is why individual cell monitoring is necessary.
+Individual cell voltage monitoring is extremely important for multi-series-cell battery safety. Each individual lithium ion cell needs to be kept in a specific voltage range: too low and the cell begins to degrade very quickly, too high, and the cell can catch fire and explode. This is why individual cell monitoring is necessary.
 
 Battery cell balancing takes cell monitoring a step further by eliminating the voltage delta, thereby mitigating the risk of cell explosion or degradation via high cell voltage delta. A battery with near-zero voltage delta requires the maximum amount of charge & discharge cycles (in other words, the maximum amount of time for cell differences to compound) before the it is back under the severe risk of cell explosion or degradation. 
+
+As such, battery cell balancing is paramount to maintain the safety of a multi-cell-battery.
 
 ### 2. What is Controller Area Network (CAN) bus?
 CAN bus is a message-based serial communications protocol typically used in embedded systems where there are several nodes that all must communicate with one another (also known as a multiplex system). Using CAN bus in this design scenario generally simplifies on electrical wiring, message prioritization, and error handling. 
 
-In the context of Boosted Boards, CAN is used for communications between the ESC and battery, as well as the ESC and the accessory port. If you would like to know more about Boosted Board batteries, check out the [BoostedBreakCAN folder](https://github.com/axkrysl47/BoostedBreak/tree/main/CAN).
+In the context of Boosted Boards, CAN is used for communications between the ESC and battery, as well as the ESC and the accessory port. The choice to use CAN infers that one day Boosted was interested in creating a multi-ESC, all wheel drive electric longboard (thereby a multiplex embedded system). If you would like to know more about Boosted Board batteries, check out the [BoostedBreakCAN folder](https://github.com/axkrysl47/BoostedBreak/tree/main/CAN).
 
 ## 4. Parts Information
 
@@ -96,15 +104,27 @@ In the context of Boosted Boards, CAN is used for communications between the ESC
 From Forever Boosted:
 > All Boosted boards, except for the V1, use the same ESC printed circuit board, which is interchangeable across all V2 & V3 boards. The speed modes are determined by the firmware. NOTE: While the longboard ESCs will technically work on the Mini boards, they use a different enclosure, so they are not a direct swap.
 
+The V1 was originally designed with single & dual motors in mind. A V1 Dual ESC will look like two ESCs, each on their own half of the whole printed circuit board.
+
+With the release of the V2, Boosted went away with single motor electric longboards, and as such consolidated their ESC design with a single dsPIC microcontroller for both motors. The original V2 was likely over-engineered for the rated amperages/power of the V2 boards; when it came time to release the V3 boards, raising the software limits on the same ESC design for the Boosted Stealth was both safe and cost-effective for Boosted.
+
 ### 2. What motors did Boosted use, and are they interchangeable?
 From Forever Boosted:
-> The V2 & V3 boards use brushless 5035 192kv motors with custom Hall effect sensors and a 17T motor pulley (the V1 motor has a 14T pulley). They are interchangeable between both sides of the board (left and right) and between V2 and all V3 boards (Stealth, Plus, and Mini).
+
+The V1 boards use standard sensorless (I think) brushless 5035 192KV motors with 14T motor pulleys.
+> The V2 & V3 boards use brushless 5035 192KV motors with custom Hall effect sensors and a 17T motor pulley. They are interchangeable between both sides of the board (left and right) and between V2 and all V3 boards (Stealth, Plus, and Mini).
 
 The T2 motor that came with V2 and most V3 boards has been known to have motor shaft failures. The later T3 motor was manufactured to resolve the issue.
+
+I believe the choice to use 5035 motors was made such that 1) the trucks could be very similar to standard width, and 2) the smaller size more comfortably fits under the deck, leading to a sleeker, more conventional & attractive longboard design. 
 
 ### 3. What battery cells did Boosted use, and are they interchangeable?
 From Forever Boosted:
 > The standard range (SRB) battery uses A123 26650 LiFePO4 cells in a 12S1P configuration (12 cells total) and the extended range (XRB) battery uses LG HG2 18650 Lithium Ion cells in a 13S2P configuration (26 cells total).
+
+The A123 cell for the SRB was a very reasonable choice. LiFePO4 cells are generally more stable than their Li-ion cell counterparts, leading to less-likely-to-explode battery. Furthermore, the A123 has a highly rated discharge rate of 50 amperes, making a 12S A123 battery have a nominal power rating of 1980 watts. The only downside is that the energy rating of the SRB was under 100 watt-hours, which meant the range was at most a handful of miles.
+
+Th HG2 cell for the XRB to resolve the energy downside of the SRB. With the XRB, Boosted moved to the more popular Li-ion cell, and one with a rated continuous discharge rate of only 20 amperes. The power rating of a 13S2P HG2 battery only got up to 1872 watts, notably lower than the SRB. I suspect that Boosted went over that power specification, especially with hyper mode on the Boosted Stealth. Perhaps to compensate for this, the energy rating of the XRB is under specification, rated at 199 watt-hours, which is still double the SRB's energy rating.
 
 > All standard range batteries across all V2 & V3 boards are the same. Likewise, all extended range batteries across all V2 & V3 boards are the same. This means that the standard range battery works on all V2 & V3 boards while the extended range battery can be installed on all V2 & V3 boards, except for the Mini S as it does not fit on the deck due to the motor driver placement. The V1 battery was not designed to be removeable or swappable. NOTE: Older V2 boards need to be manually updated to ESC firmware v2.1.9 or later to work with an extended range battery.
 
