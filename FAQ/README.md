@@ -94,7 +94,7 @@ In the context of Boosted Boards, CAN is used for communications between the ESC
 
 ### 1. Does Boosted use different ESCs?
 From Forever Boosted:
-> All Boosted boards, except for the v1, use the same ESC printed circuit board, which is interchangeable across all v3/v2 boards. The speed modes are determined by the firmware. NOTE: While the longboard ESCs will technically work on the Mini boards, they use a different enclosure, so they are not a direct swap.
+> All Boosted boards, except for the V1, use the same ESC printed circuit board, which is interchangeable across all V2 & V3 boards. The speed modes are determined by the firmware. NOTE: While the longboard ESCs will technically work on the Mini boards, they use a different enclosure, so they are not a direct swap.
 
 ### 2. What motors did Boosted use and are they interchangeable?
 From Forever Boosted:
