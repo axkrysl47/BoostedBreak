@@ -27,6 +27,10 @@ Further, the SRB and XRB emulators, as well as 'brief mode', are not yet impleme
 
 As soon as I acquire another remote for testing, I plan to start __BoostedBreakBLE__ to attempt to reverse-engineer Boosted's Bluetooth protocol that exists between V2/3 electronic speed controllers & remotes.
 
+### __BoostedBreakFAQ__
+
+I have started __BoostedBreakFAQ__, which I hope to be a one-stop-shop for all frequently asked questions regarding everything Boosted Boards. There already exist great Boosted FAQ resources in the community - what I hope to do is meaningfully add to the knowledgebase from the perspective of a firmware/embedded software engineer.
+
 ## Finally...
 
 For anyone who is interested in contributing to this project, please reach out to me either on [__XR General Hospital's__ Discord community (__@axkrysl47#8179__)](https://www.xrgeneralhospital.com/) or on the [Boosted Board reddit page (__@axkrysl47__)](https://www.reddit.com/r/boostedboards/). I will be sure to credit you with any and all contributions you make!
