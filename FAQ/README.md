@@ -23,7 +23,7 @@ The majority of from this list is a form of redundancy from Mario Parra's websit
    2. [What is Controller Area Network (CAN bus)?](#2-what-is-controller-area-network-can-bus)
 5. [Parts Information](#4-parts-information)
    1. [Does Boosted use different ESCs?](#1-does-boosted-use-different-escs)
-   2. [What motors did Boosted use and are they interchangeable?](#2-what-motors-did-boosted-use-and-are-they-interchangeable)
+   2. [What motors did Boosted use, and are they interchangeable?](#2-what-motors-did-boosted-use-and-are-they-interchangeable)
    3. [What battery cells did Boosted use, and are they interchangeable?](#3-what-battery-cells-did-boosted-use-and-are-they-interchangeable)
    4. [What charger did Boosted use, and are they interchangeable?](#4-what-charger-did-boosted-use-and-are-they-interchangeable)
    5. [What belts did Boosted use?](#5-what-belts-did-boosted-use)
@@ -66,7 +66,7 @@ In general, an electric skateboard/longboard battery is a relatively high capaci
 ### 8. What is an electric skateboard/longboard remote?
 In general, an electric skateboard/longboard remote is a wireless remote that provides a throttle for riders of electric longboards. Typically, the remote also gives riders basic information about the state of the electric skateboard/longboard, including state of charge, current speed mode, and more. If you would like to know more about Boosted Board remotes, check out the [BoostedBreakREM folder]().
 
-## 3 Technical Information
+## 3. Technical Information
 
 ### 1. What is battery cell balancing?
 Battery cell balancing is the act of charging/discharging individual cells in a multi-series-cell battery such that all the cells are at a similar voltage. Put simply, individual cells in a battery need to be safely kept in a specific voltage range - battery cell balancing ensures this safety with the maximum margin of error.
@@ -85,18 +85,18 @@ Individual cell voltage monitoring is paramount for multi-series-cell battery sa
 
 Battery cell balancing takes cell monitoring a step further by eliminating the voltage delta, thereby mitigating the risk of cell explosion or degradation via high cell voltage delta. A battery with near-zero voltage delta requires the maximum amount of charge & discharge cycles (in other words, the maximum amount of time for cell differences to compound) before the it is back under the severe risk of cell explosion or degradation. 
 
-### 2. What is Controller Area Network (CAN bus)?
+### 2. What is Controller Area Network (CAN) bus?
 CAN bus is a message-based serial communications protocol typically used in embedded systems where there are several nodes that all must communicate with one another (also known as a multiplex system). Using CAN bus in this design scenario generally simplifies on electrical wiring, message prioritization, and error handling. 
 
 In the context of Boosted Boards, CAN is used for communications between the ESC and battery, as well as the ESC and the accessory port. If you would like to know more about Boosted Board batteries, check out the [BoostedBreakCAN folder](https://github.com/axkrysl47/BoostedBreak/tree/main/CAN).
 
-## 4 Parts Information
+## 4. Parts Information
 
 ### 1. Does Boosted use different ESCs?
 From Forever Boosted:
 > All Boosted boards, except for the V1, use the same ESC printed circuit board, which is interchangeable across all V2 & V3 boards. The speed modes are determined by the firmware. NOTE: While the longboard ESCs will technically work on the Mini boards, they use a different enclosure, so they are not a direct swap.
 
-### 2. What motors did Boosted use and are they interchangeable?
+### 2. What motors did Boosted use, and are they interchangeable?
 From Forever Boosted:
 > The V2 & V3 boards use brushless 5035 192kv motors with custom Hall effect sensors and a 17T motor pulley (the V1 motor has a 14T pulley). They are interchangeable between both sides of the board (left and right) and between V2 and all V3 boards (Stealth, Plus, and Mini).
 
@@ -147,7 +147,7 @@ From Forever Boosted:
 > * __Boosted Stealth__
 >   * Boosted 85mm/78a Stratus wheels (grey)
 
-Boosted also released the Boosted 105mm/72a '105s' (black/multi-color) which were only sold separately, not standard with any given board.
+Boosted also released the Boosted 105mm/72a '105s' wheels (black/multi-color) which were only sold separately, not standard with any given board.
 
 ### 9. What pulleys did Boosted use?
 From Forever Boosted:
