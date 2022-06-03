@@ -1,4 +1,5 @@
 # __BoostedBreak Frequently Asked Questions__ (Work In Progress!)
+
 ## 1. Overview
 The following is a list of commonly asked questions & answers as found in the Boosted Board community.
 
@@ -6,45 +7,47 @@ The majority of from this list is a form of redundancy from Mario Parra's websit
 
 ### Please check out [Forever Boosted, here](https://foreverboosted.co/)!
 
+
 # Table of Contents
 1. [Overview](#1-overview)
-   1. [Link to Forever Boosted](#please-check-out-forever-boosted-here)
-3. [Basic Information](#2-basic-information)
-   1. [What is a personal light electric vehicle?](#1-what-is-a-personal-light-electric-vehicle)
-   2. [What is an electric skateboard/longboard?](#2-what-is-an-electric-skateboardlongboard)
-   3. [What is/was Boosted?](#3-what-iswas-boosted)
-   4. [What is a Boosted Board?](#4-what-is-a-boosted-board)
-   5. [What is the Boosted Rev / Scooter?](#5-what-is-the-boosted-rev--scooter)
-   6. [What is an electric skateboard/longboard ESC / Motor Driver?](#6-what-is-an-electric-skateboardlongboard-esc--motor-driver)
-   7. [What is an electric skateboard/longboard battery?](#7-what-is-an-electric-skateboardlongboard-battery)
-   8. [What is an electric skateboard/longboard remote?](#8-what-is-an-electric-skateboardlongboard-remote)
-4. [Technical Information](#3-technical-information)
-   1. [What is battery cell balancing?](#1-what-is-battery-cell-balancing)
-   2. [What is Controller Area Network (CAN bus)?](#2-what-is-controller-area-network-can-bus)
-5. [Parts Information](#4-parts-information)
-   1. [Does Boosted use different ESCs?](#1-does-boosted-use-different-escs)
-   2. [What motors did Boosted use, and are they interchangeable?](#2-what-motors-did-boosted-use-and-are-they-interchangeable)
-   3. [What battery cells did Boosted use, and are they interchangeable?](#3-what-battery-cells-did-boosted-use-and-are-they-interchangeable)
-   4. [What charger did Boosted use, and are they interchangeable?](#4-what-charger-did-boosted-use-and-are-they-interchangeable)
-   5. [What belts did Boosted use?](#5-what-belts-did-boosted-use)
-   6. [What decks did Boosted use, and what are their weight limits?](#6-what-decks-did-boosted-use-and-what-are-their-weight-limits)
-   7. [What trucks did Boosted use, and can I use third party trucks?](#7-what-trucks-did-boosted-use-and-can-i-use-third-party-trucks)
-   8. [What wheels did Boosted use?](#8-what-wheels-did-boosted-use)
-   9. [What pulleys did Boosted use?](#9-what-pulleys-did-boosted-use)
-   10. [What hardware did Boosted use?](#10-what-hardware-did-boosted-use)
+   - [Link to Forever Boosted](#please-check-out-forever-boosted-here)
+2. [Basic Information](#2-basic-information)
+   1. [What is a personal light electric vehicle?](#21-what-is-a-personal-light-electric-vehicle)
+   2. [What is an electric skateboard/longboard?](#22-what-is-an-electric-skateboardlongboard)
+   3. [What is/was Boosted?](#23-what-iswas-boosted)
+   4. [What is a Boosted Board?](#24-what-is-a-boosted-board)
+   5. [What is the Boosted Rev / Scooter?](#25-what-is-the-boosted-rev--scooter)
+   6. [What is an electric skateboard/longboard ESC / Motor Driver?](#26-what-is-an-electric-skateboardlongboard-esc--motor-driver)
+   7. [What is an electric skateboard/longboard battery?](#27-what-is-an-electric-skateboardlongboard-battery)
+   8. [What is an electric skateboard/longboard remote?](#28-what-is-an-electric-skateboardlongboard-remote)3
+3. [Technical Information](#3-technical-information)
+   1. [What is battery cell balancing?](#31-what-is-battery-cell-balancing)
+   2. [What is Controller Area Network (CAN bus)?](#32-what-is-controller-area-network-can-bus)
+4. [Parts Information](#4-parts-information)
+   1. [Does Boosted use different ESCs?](#41-does-boosted-use-different-escs)
+   2. [What motors did Boosted use, and are they interchangeable?](#42-what-motors-did-boosted-use-and-are-they-interchangeable)
+   3. [What battery cells did Boosted use, and are they interchangeable?](#43-what-battery-cells-did-boosted-use-and-are-they-interchangeable)
+   4. [What charger did Boosted use, and are they interchangeable?](#44-what-charger-did-boosted-use-and-are-they-interchangeable)
+   5. [What belts did Boosted use?](#45-what-belts-did-boosted-use)
+   6. [What decks did Boosted use, and what are their weight limits?](#46-what-decks-did-boosted-use-and-what-are-their-weight-limits)
+   7. [What trucks did Boosted use, and can I use third party trucks?](#47-what-trucks-did-boosted-use-and-can-i-use-third-party-trucks)
+   8. [What wheels did Boosted use?](#48-what-wheels-did-boosted-use)
+   9. [What pulleys did Boosted use?](#49-what-pulleys-did-boosted-use)
+   10. [What hardware did Boosted use?](#410-what-hardware-did-boosted-use)
+
 
 ## 2. Basic Information
 
-### 1. What is a personal light electric vehicle?
+### 2.1. What is a personal light electric vehicle?
 A personal electric vehicle (also known as personal transporter, powered transporter, electric rideable, personal mobility device, etc.) is any of a class of compact, mostly recent (21st century), motorised micromobility vehicle for transporting a single individual. They include electric skateboards, kick scooters, self-balancing unicycles and Segways. Many newer versions use recent advances in vehicle battery and electric motor-control technologies. 
 
-### 2. What is an electric skateboard/longboard?
+### 2.2. What is an electric skateboard/longboard?
 An electric skateboard/longboard is a personal electric vehicle that comes in the form factor of a skateboard or longboard. Generally, all electric skateboards/longboards consist of all the basic components of a skateboard/longboard (deck, trucks, wheels, etc.), plus a battery, a motor driver, motors, and more. Typically, an electric skateboard/longboard rider controls acceleration & deceleration with a throttle on a wireless remote, and makes turns in the same manner as traditional skateboards/longboards. 
 
-### 3. What is/was Boosted?
+### 2.3. What is/was Boosted?
 Boosted (formerly Boosted Boards) was an American manufacturer of electric skateboards and electric scooters based in Mountain View, California. Boosted was founded in mid-2012 with financial backing by StartX by former Stanford University students Sanjay Dastoor, John Ulmen, and Matthew Tran. Boosted was widely recognized for popularizing the electric longboard, launching from an extraordinarily successful Kickstarter campaign.
 
-### 4. What is a Boosted Board?
+### 2.4. What is a Boosted Board?
 A Boosted Board is an electrically motorized longboard or skateboard that was designed and manufactured by the now defunct company Boosted, Inc. Boosted created several different models of electric longboards, a list which can be found below.
 
 * _First generation_ (V1)
@@ -60,21 +63,22 @@ A Boosted Board is an electrically motorized longboard or skateboard that was de
   * __Boosted Plus__
   * __Boosted Stealth__
 
-### 5. What is the Boosted Rev / Scooter?
+### 2.5. What is the Boosted Rev / Scooter?
 A __Boosted Rev__ is an electrically motorized scooter that was designed and manufactured by the now defunct company Boosted, Inc. Boosted created only one electric scooter model before the company ended operations.
 
-### 6. What is an electric skateboard/longboard ESC / Motor Driver?
+### 2.6. What is an electric skateboard/longboard ESC / Motor Driver?
 In general, the terms motor driver (MD), motor controller, electronic speed controller (ESC), are all aliases for an embedded system that controls motors. On all Boosted Boards, the ESC is secured under the deck in front of the motors. If you would like to know more about Boosted Board ESCs, check out the [BoostedBreakESC folder]().
 
-### 7. What is an electric skateboard/longboard battery?
-In general, an electric skateboard/longboard battery is a relatively high capacity (typically 100 to 1000 Watt-hours), high discharge (typically 20 - 100 amperes) designed for use in electric skateboard/longboard applications. Typically, electric skateboard/longboard batteries also consist of embedded systems that control charging, monitor discharging, perform cell balancing, and more. On all Boosted Boards, the battery is secured under the deck behind the front trucks. If you would like to know more about Boosted Board batteries, check out the [BoostedBreakBTY folder]().
+### 2.7. What is an electric skateboard/longboard battery?
+In general, an electric skateboard/longboard battery is a relatively high energy (typically 100 to 1000 Watt-hours), high power (typically 1500-4000 Watts) battery designed for use in electric skateboard/longboard applications. Typically, electric skateboard/longboard batteries also consist of embedded systems that control charging, monitor discharging, perform cell balancing, and more. On all Boosted Boards, the battery is secured under the deck behind the front trucks. If you would like to know more about Boosted Board batteries, check out the [BoostedBreakSRB folder]() or the [BoostedBreakXRB folder]().
 
-### 8. What is an electric skateboard/longboard remote?
+### 2.8. What is an electric skateboard/longboard remote?
 In general, an electric skateboard/longboard remote is a wireless remote that provides a throttle for riders of electric longboards. Typically, the remote also gives riders basic information about the state of the electric skateboard/longboard, including state of charge, current speed mode, and more. If you would like to know more about Boosted Board remotes, check out the [BoostedBreakREM folder]().
+
 
 ## 3. Technical Information
 
-### 1. What is battery cell balancing?
+### 3.1. What is battery cell balancing?
 Battery cell balancing is the act of charging/discharging individual cells in a multi-series-cell battery such that all the cells are at a similar voltage. Put simply, individual cells in a battery need to be safely kept in a specific voltage range - battery cell balancing ensures this safety with the maximum margin of error.
 
 In concept, a Boosted board battery is a high-voltage battery, created by 'stacking up' several 'normal' voltage identical lithium ion cells. (For example, the SRB is made up of 12 separate cells in series.) Despite an engineer's best efforts, each cell discharges slightly differently depending on differences in manufacturing and how the battery itself is assembled. 
@@ -93,14 +97,15 @@ Battery cell balancing takes cell monitoring a step further by eliminating the v
 
 As such, battery cell balancing is paramount to maintain the safety of a multi-cell-battery.
 
-### 2. What is Controller Area Network (CAN) bus?
-CAN bus is a message-based serial communications protocol typically used in embedded systems where there are several nodes that all must communicate with one another (also known as a multiplex system). Using CAN bus in this design scenario generally simplifies on electrical wiring, message prioritization, and error handling. 
+### 3.2. What is Controller Area Network (CAN) bus?
+CAN bus is a message-based serial communications protocol typically used in embedded systems where there are several nodes that all must communicate with one another (also known as a multiplex system). Using CAN bus in this design scenario generally simplifies on electrical wiring, message prioritization, and bus error handling. 
 
-In the context of Boosted Boards, CAN is used for communications between the ESC and battery, as well as the ESC and the accessory port. The choice to use CAN infers that one day Boosted was interested in creating a multi-ESC, all wheel drive electric longboard (thereby a multiplex embedded system). If you would like to know more about Boosted Board batteries, check out the [BoostedBreakCAN folder](https://github.com/axkrysl47/BoostedBreak/tree/main/CAN).
+In the context of Boosted Boards, CAN is used for communications between the ESC and battery, as well as the ESC and the accessory port. The choice to use CAN infers that Boosted had interest in creating a multi-ESC or multi-battery electric longboard (thereby a multiplex embedded system). If you would like to know more about Boosted's CAN protocol, check out the [BoostedBreakCAN folder](https://github.com/axkrysl47/BoostedBreak/tree/main/CAN).
+
 
 ## 4. Parts Information
 
-### 1. Does Boosted use different ESCs?
+### 4.1. Does Boosted use different ESCs?
 From Forever Boosted:
 > All Boosted boards, except for the V1, use the same ESC printed circuit board, which is interchangeable across all V2 & V3 boards. The speed modes are determined by the firmware. NOTE: While the longboard ESCs will technically work on the Mini boards, they use a different enclosure, so they are not a direct swap.
 
@@ -108,7 +113,7 @@ The V1 was originally designed with single & dual motors in mind. A V1 Dual ESC 
 
 With the release of the V2, Boosted went away with single motor electric longboards, and as such consolidated their ESC design with a single dsPIC microcontroller for both motors. The original V2 was likely over-engineered for the rated amperages/power of the V2 boards; when it came time to release the V3 boards, raising the software limits on the same ESC design for the Boosted Stealth was both safe and cost-effective for Boosted.
 
-### 2. What motors did Boosted use, and are they interchangeable?
+### 4.2. What motors did Boosted use, and are they interchangeable?
 From Forever Boosted:
 
 The V1 boards use standard sensorless (I think) brushless 5035 192KV motors with 14T motor pulleys.
@@ -118,27 +123,27 @@ The T2 motor that came with V2 and most V3 boards has been known to have motor s
 
 I believe the choice to use 5035 motors was made such that 1) the trucks could be very similar to standard width, and 2) the smaller size more comfortably fits under the deck, leading to a sleeker, more conventional & attractive longboard design. 
 
-### 3. What battery cells did Boosted use, and are they interchangeable?
+### 4.3. What battery cells did Boosted use, and are they interchangeable?
 From Forever Boosted:
 > The standard range (SRB) battery uses A123 26650 LiFePO4 cells in a 12S1P configuration (12 cells total) and the extended range (XRB) battery uses LG HG2 18650 Lithium Ion cells in a 13S2P configuration (26 cells total).
 
-The A123 cell for the SRB was a very reasonable choice. LiFePO4 cells are generally more stable than their Li-ion cell counterparts, leading to less-likely-to-explode battery. Furthermore, the A123 has a highly rated discharge rate of 50 amperes, making a 12S A123 battery have a nominal power rating of 1980 watts. The only downside is that the energy rating of the SRB was under 100 watt-hours, which meant the range was at most a handful of miles.
+The A123 cell for the SRB was a very reasonable choice. LiFePO4 cells are generally more stable than their Li-ion cell counterparts, leading to a less-likely-to-explode battery. Furthermore, the A123 has a highly rated discharge rate of 50 amperes, making a 12S A123 battery have a nominal power rating of 1980 watts. The only downside is that the energy rating of the SRB was under 100 watt-hours, which meant the range was at most a handful of miles.
 
 Th HG2 cell for the XRB was chosen to resolve the energy downside of the SRB. With the XRB, Boosted moved to the more popular Li-ion cell, and one with a rated continuous discharge rate of only 20 amperes. The power rating of a 13S2P HG2 battery only got up to 1872 watts, notably lower than the SRB. I suspect that Boosted went over that power specification, especially with hyper mode on the Boosted Stealth. Perhaps to compensate for this, the energy rating of the XRB is under specification, rated at 199 watt-hours, which is still double the SRB's energy rating.
 
 > All standard range batteries across all V2 & V3 boards are the same. Likewise, all extended range batteries across all V2 & V3 boards are the same. This means that the standard range battery works on all V2 & V3 boards while the extended range battery can be installed on all V2 & V3 boards, except for the Mini S as it does not fit on the deck due to the motor driver placement. The V1 battery was not designed to be removeable or swappable. NOTE: Older V2 boards need to be manually updated to ESC firmware v2.1.9 or later to work with an extended range battery.
 
-### 4. What charger did Boosted use, and are they interchangeable?
-V2 & V3 chargers are 13S (54.4V, 2A) chargers.
+### 4.4. What charger did Boosted use, and are they interchangeable?
+V2 & V3 chargers are 13S (54.6V, 2A) chargers.
 
 From Forever Boosted:
 > The V1 charger can also charge a standard range battery, but cannot charge an extended range battery; the V2 & V3 charger can charge all Boosted batteries.
 
-### 5. What belts did Boosted use?
+### 4.5. What belts did Boosted use?
 From Forever Boosted:
 > V2 & V3 boards use custom Gates 225-15-3m belts lined with felt to reduce noise. V1 boards use 219-15-3m. (Belts follow the naming convention of length-width-tooth pitch)
 
-### 6. What decks did Boosted use, and what are their weight limits?
+### 4.6. What decks did Boosted use, and what are their weight limits?
 From Forever Boosted:
 > The V3 longboards (Stealth/Plus) use a slightly stiffer 38" (L)/11.3" (W) composite deck and the Mini (X/S) boards use a "Deep Dish" 29.5" (L)/11" (W) composite deck. Both have a poplar spine wrapped in triaxial fibreglass and edges reinforced with a polymer sidewall. The longboard deck also contains vibration-dampending foam.
 >
@@ -146,13 +151,13 @@ From Forever Boosted:
 >
 > All decks are rated for use by riders up to 250 lbs (113 kg).
 
-### 7. What trucks did Boosted use, and can I use third party trucks?
+### 4.7. What trucks did Boosted use, and can I use third party trucks?
 From Forever Boosted:
 > The V2 & V3 boards use custom 190mm (hangar width)/50° (baseplate angle) trucks with a rakeless hangar while the V1 uses 50° Caliber IIs. “Rakeless” denotes that the hanger can face either direction, but for visual reasons, it is installed with the circle facing down. The V2 trucks were cast while the V3 trucks were forged.
 
 > You can use a 180mm/50° truck on the front, such as a Paris truck from Loaded boards, but the rear truck assembly uses Boosted’s custom motor mounts. 180mm is the closest size as 190mm is not a common longboard truck width. You can also use a third-party baseplate with the V2 & V3 rear truck, such as a 50° Caliber baseplate to match the front.
 
-### 8. What wheels did Boosted use?
+### 4.8. What wheels did Boosted use?
 From Forever Boosted:
 > * __Boosted Single, Boosted Dual (V1), Boosted Dual+ (V1)__
 >   * Orangatang 75mm/80a In Heat wheels (orange) with custom drilled pulleys
@@ -169,7 +174,7 @@ From Forever Boosted:
 
 Boosted also released the Boosted 105mm/72a '105s' wheels (black/multi-color) which were only sold separately, not standard with any given board.
 
-### 9. What pulleys did Boosted use?
+### 4.9. What pulleys did Boosted use?
 From Forever Boosted:
 > V1 Boards used custom aluminum 50T pulleys that came standard with the Orangatang In Heat wheels.
 
@@ -177,7 +182,7 @@ From Forever Boosted:
 
 The Boosted Stealth and Boosted 105s came with a similar plastic 56T pulley, compatible with all kegel cores, but had metal teeth instead of plastic.
 
-### 10. What hardware did Boosted use?
+### 4.10. What hardware did Boosted use?
 From Forever Boosted:
 > Battery: The battery screws are M6 x 12mm (diameter)/20mm (length), which are 90° countersunk and take a 4mm Allen wrench.
 >
