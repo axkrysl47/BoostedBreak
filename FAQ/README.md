@@ -23,6 +23,7 @@ The majority of from this list is a form of redundancy from Mario Parra's websit
 3. [Technical Information](#3-technical-information)
    1. [What is battery cell balancing?](#31-what-is-battery-cell-balancing)
    2. [What is Controller Area Network (CAN bus)?](#32-what-is-controller-area-network-can-bus)
+   3. [What is endianness, and what is the difference between little-endian & big-endian?](#33-what-is-endianness-and-what-is-the-difference-between-little-endian--big-endian)
 4. [Parts Information](#4-parts-information)
    1. [Does Boosted use different ESCs?](#41-does-boosted-use-different-escs)
    2. [What motors did Boosted use, and are they interchangeable?](#42-what-motors-did-boosted-use-and-are-they-interchangeable)
@@ -102,6 +103,18 @@ CAN bus is a message-based serial communications protocol typically used in embe
 
 In the context of Boosted Boards, CAN is used for communications between the ESC and battery, as well as the ESC and the accessory port. The choice to use CAN infers that Boosted had interest in creating a multi-ESC or multi-battery electric longboard (thereby a multiplex embedded system). If you would like to know more about Boosted's CAN protocol, check out the [BoostedBreakCAN folder](https://github.com/axkrysl47/BoostedBreak/tree/main/CAN).
 
+### 3.3. What is endianness, and what is the difference between little-endian & big-endian?
+Endianness is a computer science term used to describe the arrangement of multi-byte (or multiples of 8 binary digits / 8 bits) numbers. 
+
+For example, take the decimal number `16,909,060`. In hexadecimal, this number is represented as `0x 01 02 03 04`, and in binary, this number is `0b 00000001 00000010 00000011 00000100`. So far, I've described this number in big-endian form - the most significant byte comes first, and the least significant byte comes last. This is generally intuitive, as we generally write numbers by most significant digit to least significant digit.
+
+In little-endian form, the opposite is true - the least significant byte comes first, while the most significant byte comes last. So, as an example, `0x 01 02 03 04` in big-endian is `0x 04 03 02 01` in little-endian. Notice that the bits inside the bytes stay in intuitive order; only the individual bytes themselves are in reverse order.
+
+At first, little-endianness seems like a unproductive concept. Big-endian numbers are easier for people to read and work with. While it is true that we write numbers in 'big-endian' order, it is very convenient to add (and perform other arithmetic operations on) numbers from least significant digit to most significant digit. For example, if we need to add two numbers, but we can only receive one digit of each at a time, we can start adding right away if we receive the least significant digits first. On the contrary, if we received digits starting from the most significant digit, we would have to back-propogate any carry-over. This is the motivation to arrange multi-byte numbers in little-endian form.
+
+For most microprocessors, the smallest numerical unit for arithmetic operations is the byte (8 bits). That is, they are designed to perform mathematic operations with groups of bytes, usually between 1 to 8 bytes. This is the reason why the bits inside each byte are not in reverse order. 
+
+When there is a discussion around microprocessors regarding 8-bit, 16-bit, 32-bit, 64-bit, etc. architectures, this indicates the target binary number size of the hardware arithmetic unit inside the chip. For example, the dsPIC microcontrollers used in Boosted's XRB & ESC are 16-bit architectures, meaning they are designed in hardware around 16-bit / 2-byte mathematic operations. (To be clear, the dsPIC is still capable of performing 32-bit arithmetic, but not as quickly as a comparable 16-bit operation.)
 
 ## 4. Parts Information
 
